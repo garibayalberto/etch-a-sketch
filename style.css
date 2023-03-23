@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+  font-family: 'Bebas Neue';
+}
+
+:root {
+  --gridBaseColor: lightgray;
+  --white: #ffffff;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+h1 {
+  width: 100%;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 77px;
+
+  text-align: center;
+  letter-spacing: 0.15em;
+
+  color: #4F8FA0;
+
+  text-shadow: 3px 3px 0 #000, 3px 3px 0 #000, 3px 3px 0 #000, 4px 3px 0 #000;
+}
+
+/* Form -- START */
+
+#gridConfig {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#gridConfig .field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gridConfig #colorConfig {
+  flex-direction: column;
+}
+
+#gridConfig #gridSizeContainer {
+  width: 20vw;
+}
+
+#gridConfig #gridSizeContainer .label {
+  white-space: nowrap;  
+}
+
+#gridConfig #gridSizeContainer > * {
+  margin: 0 .5vw;
+}
+
+#gridConfig #gridSizeContainer input {
+  width: 100%;
+}
+
+input[type='color'] {
+  transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+  transform: scale(1.05);
+}
+
+input[type='color']:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(1);
+}
+
+input[type='color'] {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+/* Grid -- START */
+
+#grid {
+  width: 50%;
+  height: 0;
+  padding-bottom: 50%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid-row {
+  display: flex;
+}
+
+
+.cell-item {
+  background-color: var(--gridBaseColor);
+  height: 0;
+}
+
+/* First Cell Item in First Row*/
+#grid .grid-row:first-child .cell-item:first-child{
+  border-radius: 25% 0 0 0;
+}
+
+/* Last Cell Item in First Row*/
+#grid .grid-row:first-child .cell-item:last-child{
+  border-radius: 0 25% 0 0;
+}
+
+/* First Cell Item in Last Row*/
+#grid .grid-row:last-child .cell-item:first-child{
+  border-radius: 0 0 0 25%;
+}
+
+/* Last Cell Item in Last Row*/
+#grid .grid-row:last-child .cell-item:last-child{
+  border-radius: 0 0 25% 0;
+}
+

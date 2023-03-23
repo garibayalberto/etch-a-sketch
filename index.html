@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Etch - A - Sketch</h1>
+
+    <div id="gridConfig">
+      <div id="gridSizeContainer" class="field">
+        <p class="label">Grid Size: <span id="rows"></span> x <span id="cols"></span></p>
+        <input type="number" id="gridSize" placeholder="10" min="10" max="64" />
+      </div>
+      
+      <div id="colorConfig" class="field">
+        <div id="colorPickerContainer" class="field">
+          <p class="label" >Color</p>
+          <input id="colorPicker" type="color" value="#333333">
+        </div>
+        
+        <div id="randomModeContainer" class="field">
+          <p class="label" >Random Mode</p>
+          <input id="randomMode" type="checkbox" value="false">
+        </div>
+        
+
+      </div>
+
+      <div id="brushConfig" class="field">
+        <p class="label" >Light Brush</p>
+        <input id="lightBrush" type="checkbox" value="false">
+
+      </div>
+
+      <button id="clearGrid" type="button">Clear</button>
+    </div>
+
+    <div id="grid"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
