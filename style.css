@@ -102,22 +102,24 @@ input[type='color']::-webkit-color-swatch {
 /* Grid -- START */
 
 #grid {
-  width: 50%;
+  /* width: 50%;
   height: 0;
   padding-bottom: 50%;
 
   display: flex;
   flex-wrap: wrap;
-}
+  */
+  display: grid;
+  width: 500px;
+  height: 500px;
+  background-color: var(--gridBaseColor);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-.grid-row {
-  display: flex;
-}
-
+} 
 
 .cell-item {
   background-color: var(--gridBaseColor);
-  height: 0;
+  user-select: none;
 }
 
 /* First Cell Item in First Row*/
