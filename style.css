@@ -5,6 +5,7 @@
 }
 
 :root {
+  --textColor: #4F8FA0;
   --gridBaseColor: lightgray;
   --white: #ffffff;
 }
@@ -26,7 +27,7 @@ h1 {
   text-align: center;
   letter-spacing: 0.15em;
 
-  color: #4F8FA0;
+  color: var(--textColor);
 
   text-shadow: 3px 3px 0 #000, 3px 3px 0 #000, 3px 3px 0 #000, 4px 3px 0 #000;
 }
@@ -41,30 +42,42 @@ h1 {
   justify-content: space-evenly;
 }
 
-#gridConfig .field {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#gridConfig button {
+  width: 75%;
+  height: 3em;
+  border-radius: 10px;
+  border: 3px solid var(--textColor);
+  color: var(--textColor);
+  font-size: 1.05em;
+
 }
 
-#gridConfig #colorConfig {
-  flex-direction: column;
+#gridConfig button.active {
+  background-Color: var(--textColor);
+  border: 3px solid black;
+  color: white;
+}
+
+#gridConfig button:active {
+  background-Color: var(--textColor);
+  border: 3px solid black;
+  color: white;
 }
 
 #gridConfig #gridSizeContainer {
-  width: 20vw;
-}
-
-#gridConfig #gridSizeContainer .label {
-  white-space: nowrap;  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 #gridConfig #gridSizeContainer > * {
-  margin: 0 .5vw;
+  margin: 0;
 }
 
 #gridConfig #gridSizeContainer input {
-  width: 100%;
+  width: 75%;
 }
 
 input[type='color'] {
@@ -76,39 +89,21 @@ input[type='color']:hover {
   transform: scale(1.05);
 }
 
-input[type='color']:active {
+input[type='color']:focus {
   transition: transform 0.05s ease-in-out;
   transform: scale(1);
 }
 
 input[type='color'] {
-  -webkit-appearance: none;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border: none;
+  border-radius: 50%;
 }
 
-input[type='color']::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-input[type='color']::-webkit-color-swatch {
-  border: none;
-  border-radius: 50px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-
-/* Grid -- START */
+/* Grid */
 
 #grid {
-  /* width: 50%;
-  height: 0;
-  padding-bottom: 50%;
-
-  display: flex;
-  flex-wrap: wrap;
-  */
   display: grid;
   width: 500px;
   height: 500px;
@@ -122,23 +117,4 @@ input[type='color']::-webkit-color-swatch {
   user-select: none;
 }
 
-/* First Cell Item in First Row*/
-#grid .grid-row:first-child .cell-item:first-child{
-  border-radius: 25% 0 0 0;
-}
-
-/* Last Cell Item in First Row*/
-#grid .grid-row:first-child .cell-item:last-child{
-  border-radius: 0 25% 0 0;
-}
-
-/* First Cell Item in Last Row*/
-#grid .grid-row:last-child .cell-item:first-child{
-  border-radius: 0 0 0 25%;
-}
-
-/* Last Cell Item in Last Row*/
-#grid .grid-row:last-child .cell-item:last-child{
-  border-radius: 0 0 25% 0;
-}
 
